@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="https://global-uploads.webflow.com/623afbf7b898f2b9ad81d428/637691512f1c492caf132549_ProductArena_logo%201%20(2).svg" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+            </h1>
+            <br>
+
+            {{ form.email_address.label() }}
+            {{ form.email_address(class="form-control", placeholder="E-mail") }}
+
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control", placeholder="Password") }}
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-success") }}
+
+        </form>
+    </div>
+</body>
+{% endblock %}

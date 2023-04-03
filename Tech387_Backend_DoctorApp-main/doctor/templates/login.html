@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <img
+      src="../static/style/ProductArena_logo 1.png"
+      alt="ProductArena_logo"
+      class="logo"
+    />
+    <form method="POST">
+      {{form.hidden_tag()}}
+      {{form.email(class="input-field",placeholder="Email")}}
+      {{form.password(class="input-field",placeholder="Password")}} {% with
+      messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+      {% for category, message in messages %}
+      <div class="custom-alert alert alert-{{ category }} ">
+        <button
+          type="button"
+          class="m1-2 mb-1 close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{message}}
+      </div>
+      {% endfor %} {% endif %} {% endwith %}{{form.submit(class="login-btn")}}
+    </form>
+  </div>
+{% endblock %}
